@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci Sequence</title>
+  </head>
+
+  <body>
+    <h1>Fibonacci Sequence</h1>
+    <p class="termos1"></p>
+    <p class="termos2"></p>
+  </body>
+
+  <script>
+    const termosArea = document.querySelector(".termos1");
+
+    let anterior = 0;
+    let atual = 0;
+    let prev = 0;
+
+    for (let count = 1; count <= 21; count++) {
+      termosArea.innerHTML += ` => ${atual}`;
+      if (anterior == 0) {
+        atual = 1;
+        anterior += atual;
+      } else {
+        prev = atual + anterior;
+        anterior = atual;
+        atual = prev;
+      }
+    }
+  </script>
+</html>
